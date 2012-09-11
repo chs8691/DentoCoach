@@ -104,56 +104,56 @@ public class DentoCoach extends Activity {
 
 		}
 
-		private void builderOld() {
-			// upper out
-			partList.add(new Part(R.id.brush_ulo, getPartDuration(), 20, -40,
-					this));
-			partList.add(new Part(R.id.brush_ufo, getPartDuration(), 40, 0,
-					this));
-			partList.add(new Part(R.id.brush_uro, getPartDuration(), 20, 40,
-					this));
-
-			// lower out
-			partList.add(new Part(R.id.brush_lro, getPartDuration(), -20, 40,
-					this));
-			partList.add(new Part(R.id.brush_lfo, getPartDuration(), -40, 0,
-					this));
-			partList.add(new Part(R.id.brush_llo, getPartDuration(), -20, -40,
-					this));
-
-			// lower in
-			partList.add(new Part(R.id.brush_lli, getPartDuration(), 20, 40,
-					this));
-			partList.add(new Part(R.id.brush_lfi, getPartDuration(), 40, 0,
-					this));
-			partList.add(new Part(R.id.brush_lri, getPartDuration(), 20, -40,
-					this));
-
-			// upper in
-			partList.add(new Part(R.id.brush_uri, getPartDuration(), -20, -40,
-					this));
-			partList.add(new Part(R.id.brush_ufi, getPartDuration(), -40, 0,
-					this));
-			partList.add(new Part(R.id.brush_uli, getPartDuration(), -20, 40,
-					this));
-
-			// upper top
-			partList.add(new Part(R.id.brush_ult, getPartDuration(), 20, -40,
-					this));
-			partList.add(new Part(R.id.brush_uft, getPartDuration(), 40, 0,
-					this));
-			partList.add(new Part(R.id.brush_urt, getPartDuration(), 20, 40,
-					this));
-
-			// lower top
-			partList.add(new Part(R.id.brush_lrt, getPartDuration(), -20, 40,
-					this));
-			partList.add(new Part(R.id.brush_lft, getPartDuration(), -40, 0,
-					this));
-			partList.add(new Part(R.id.brush_llt, getPartDuration(), -20, -40,
-					this));
-
-		}
+		// private void builderOld() {
+		// // upper out
+		// partList.add(new Part(R.id.brush_ulo, getPartDuration(), 20, -40,
+		// this));
+		// partList.add(new Part(R.id.brush_ufo, getPartDuration(), 40, 0,
+		// this));
+		// partList.add(new Part(R.id.brush_uro, getPartDuration(), 20, 40,
+		// this));
+		//
+		// // lower out
+		// partList.add(new Part(R.id.brush_lro, getPartDuration(), -20, 40,
+		// this));
+		// partList.add(new Part(R.id.brush_lfo, getPartDuration(), -40, 0,
+		// this));
+		// partList.add(new Part(R.id.brush_llo, getPartDuration(), -20, -40,
+		// this));
+		//
+		// // lower in
+		// partList.add(new Part(R.id.brush_lli, getPartDuration(), 20, 40,
+		// this));
+		// partList.add(new Part(R.id.brush_lfi, getPartDuration(), 40, 0,
+		// this));
+		// partList.add(new Part(R.id.brush_lri, getPartDuration(), 20, -40,
+		// this));
+		//
+		// // upper in
+		// partList.add(new Part(R.id.brush_uri, getPartDuration(), -20, -40,
+		// this));
+		// partList.add(new Part(R.id.brush_ufi, getPartDuration(), -40, 0,
+		// this));
+		// partList.add(new Part(R.id.brush_uli, getPartDuration(), -20, 40,
+		// this));
+		//
+		// // upper top
+		// partList.add(new Part(R.id.brush_ult, getPartDuration(), 20, -40,
+		// this));
+		// partList.add(new Part(R.id.brush_uft, getPartDuration(), 40, 0,
+		// this));
+		// partList.add(new Part(R.id.brush_urt, getPartDuration(), 20, 40,
+		// this));
+		//
+		// // lower top
+		// partList.add(new Part(R.id.brush_lrt, getPartDuration(), -20, 40,
+		// this));
+		// partList.add(new Part(R.id.brush_lft, getPartDuration(), -40, 0,
+		// this));
+		// partList.add(new Part(R.id.brush_llt, getPartDuration(), -20, -40,
+		// this));
+		//
+		// }
 
 		private int getPartDuration() {
 			return (speed.value() * 1000);
@@ -186,18 +186,15 @@ public class DentoCoach extends Activity {
 
 		}
 
-		@Override
 		public void onAnimationEnd(Animation animation) {
 			next();
 
 		}
 
-		@Override
 		public void onAnimationRepeat(Animation animation) {
 			// Nothing to do
 		}
 
-		@Override
 		public void onAnimationStart(Animation animation) {
 			// Nothing to do
 		}
@@ -323,7 +320,6 @@ public class DentoCoach extends Activity {
 		chronometer
 				.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
 
-					@Override
 					public void onChronometerTick(Chronometer chronometer) {
 						runningTime = SystemClock.elapsedRealtime()
 								- chronometer.getBase();
@@ -347,7 +343,6 @@ public class DentoCoach extends Activity {
 		animationController = new AnimationController(settings.getSpeed());
 		animationController.setRoundListener(new RoundListener() {
 
-			@Override
 			public void onRoundChanged(short round) {
 				roundView.setText(String.valueOf(round));
 			}
@@ -360,7 +355,6 @@ public class DentoCoach extends Activity {
 		startBtn = (Button) findViewById(R.id.startBtn);
 		startBtn.setOnClickListener(new View.OnClickListener() {
 
-			@Override
 			public void onClick(View v) {
 
 				switch (status) {
@@ -402,7 +396,6 @@ public class DentoCoach extends Activity {
 		resetBtn.setEnabled(false);
 		resetBtn.setOnClickListener(new View.OnClickListener() {
 
-			@Override
 			public void onClick(View v) {
 				reset();
 

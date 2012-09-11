@@ -149,23 +149,19 @@ class Settings implements SettingValues {
 		return new Settings(ctx);
 	}
 
-	@Override
 	public int getDuration() {
 		return duration;
 	}
 
-	@Override
 	public String getRingtone() {
 		return ringtone;
 	}
 
-	@Override
 	public boolean getRingtoneSwitch() {
 
 		return ringtoneSwitch;
 	}
 
-	@Override
 	public Speed getSpeed() {
 		return speed;
 	}

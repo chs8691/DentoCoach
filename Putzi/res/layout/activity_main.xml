@@ -1,0 +1,205 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:gravity="center_horizontal"
+    android:layout_marginRight="2dp"
+    android:layout_marginLeft="2dp"
+    >
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="2dp" 	    
+	    android:layout_marginBottom="2dp" 
+	    android:background="#FFFFFFFF">
+
+     	<TextView
+	        android:id="@+id/count_down"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="3"	        
+   		    android:layout_margin="1dp"
+		    android:padding="2dp"
+		    android:textSize="50sp"
+		    android:textStyle="bold" 
+		    android:gravity="center"
+		    android:background="#FF000000"
+		    android:text="2:30"
+        />  
+	    	    
+
+	    <TextView
+	        android:id="@+id/end_time"
+		    android:layout_width="wrap_content"
+		    android:layout_height="match_parent"
+		    android:layout_weight="1"	        
+   		    android:layout_marginTop="1dp"
+   		    android:layout_marginBottom="1dp"
+		    android:padding="2dp"
+		    android:gravity="center"
+		    android:background="#FF000000"
+		    android:text="2:30"
+        />        
+
+		<TextView
+		    android:id="@+id/round"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="2"
+		    android:text="@string/round"
+		    android:textSize="50sp"
+		    android:textStyle="bold" 
+   		    android:layout_margin="1dp"
+		    android:padding="2dp"
+		    android:gravity="center"
+		    android:background="#FF000000"
+		    />
+ 		 	
+	</LinearLayout>	    
+	<ProgressBar
+		android:id="@+id/progress_bar"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="1dp"
+		style="@android:style/Widget.ProgressBar.Horizontal"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="2dp">
+
+		<Button android:id="@+id/startBtn" 
+			android:text="@string/startButtonStart"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="6"/>	
+			
+		<Button android:id="@+id/resetBtn" 
+			android:text="@string/resetButton"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"/>	
+			    
+	</LinearLayout>	
+			
+    <!-- Black canvan -->
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"  
+        android:layout_marginTop="3dp">
+
+			<ImageView   
+			        android:scaleType="centerInside"
+					android:src="@drawable/teeth"
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content"/>				
+	        	        
+			<ImageView android:id="@+id/brush_ulo"  
+					android:src="@drawable/brush_ulo" 
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content"/>				
+			<ImageView android:id="@+id/brush_ufo"  
+					android:src="@drawable/brush_ufo" 
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content"
+					android:visibility="invisible"/>	
+			<ImageView android:id="@+id/brush_uro"  
+					android:src="@drawable/brush_uro" 
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content"
+					android:visibility="invisible"/>	
+	
+			<ImageView android:id="@+id/brush_lro"  
+					android:src="@drawable/brush_lro" 
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content"
+					android:visibility="invisible"/>				
+			<ImageView android:id="@+id/brush_lfo"  
+					android:src="@drawable/brush_lfo" 
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content"
+					android:visibility="invisible"/>	
+			<ImageView android:id="@+id/brush_llo"  
+					android:src="@drawable/brush_llo" 
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content"
+					android:visibility="invisible"/>	
+					
+							
+			<ImageView android:id="@+id/brush_lli"  
+					android:src="@drawable/brush_lli" 
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content"
+					android:visibility="invisible"/>				
+			<ImageView android:id="@+id/brush_lfi"  
+					android:src="@drawable/brush_lfi" 
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content"
+					android:visibility="invisible"/>	
+			<ImageView android:id="@+id/brush_lri"  
+					android:src="@drawable/brush_lri" 
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content"
+					android:visibility="invisible"/>	
+				
+				
+			<ImageView android:id="@+id/brush_uri"  
+					android:src="@drawable/brush_uri" 
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content"
+					android:visibility="invisible"/>				
+			<ImageView android:id="@+id/brush_ufi"  
+					android:src="@drawable/brush_ufi" 
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content"
+					android:visibility="invisible"/>	
+			<ImageView android:id="@+id/brush_uli"  
+					android:src="@drawable/brush_uli" 
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content"
+					android:visibility="invisible"/>
+					
+			<ImageView android:id="@+id/brush_ult"  
+					android:src="@drawable/brush_ult" 
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content"
+					android:visibility="invisible"/>				
+			<ImageView android:id="@+id/brush_uft"  
+					android:src="@drawable/brush_uft" 
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content"
+					android:visibility="invisible"/>	
+			<ImageView android:id="@+id/brush_urt"  
+					android:src="@drawable/brush_urt" 
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content"
+					android:visibility="invisible"/>
+					
+					
+			<ImageView android:id="@+id/brush_lrt"  
+					android:src="@drawable/brush_lrt" 
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content"
+					android:visibility="invisible"/>				
+			<ImageView android:id="@+id/brush_lft"  
+					android:src="@drawable/brush_lft" 
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content"
+					android:visibility="invisible"/>	
+			<ImageView android:id="@+id/brush_llt"  
+					android:src="@drawable/brush_llt" 
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content"
+					android:visibility="invisible"/>
+					
+    </FrameLayout>
+    
+
+
+
+
+</LinearLayout>
+

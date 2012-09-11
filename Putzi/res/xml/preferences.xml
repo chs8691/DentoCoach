@@ -1,0 +1,26 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference 
+        android:key="pref_duration"
+        android:title="@string/pref_duration_title"
+        android:defaultValue="120"/>
+    
+    <ListPreference 
+        android:key="pref_speed"
+        android:title="@string/pref_speed_title"
+        android:entries="@array/pref_speed_entries"
+        android:entryValues="@array/pref_speed_values"
+        android:defaultValue="2"
+        />
+    
+    <RingtonePreference 
+        android:key="pref_ringtone"
+        android:title="@string/pref_ringtone_title"
+        android:ringtoneType="all"
+        android:showSilent="true"
+        android:defaultValue=""
+       />
+        
+    
+    
+</PreferenceScreen>

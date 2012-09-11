@@ -61,7 +61,6 @@ public class SettingsActivity extends ListActivity {
 				.setSingleChoiceItems(items, actItem,
 						new DialogInterface.OnClickListener() {
 
-							@Override
 							public void onClick(DialogInterface dialog, int item) {
 
 								// Back converting and store in entity
@@ -74,7 +73,6 @@ public class SettingsActivity extends ListActivity {
 				.setNeutralButton(R.string.ButtonCancel,
 						new DialogInterface.OnClickListener() {
 
-							@Override
 							public void onClick(DialogInterface dialog,
 									int which) {
 
@@ -106,7 +104,6 @@ public class SettingsActivity extends ListActivity {
 				.setSingleChoiceItems(items, actItem,
 						new DialogInterface.OnClickListener() {
 
-							@Override
 							public void onClick(DialogInterface dialog, int item) {
 
 								// Back converting and store in entity
@@ -122,7 +119,6 @@ public class SettingsActivity extends ListActivity {
 				.setNeutralButton(R.string.ButtonCancel,
 						new DialogInterface.OnClickListener() {
 
-							@Override
 							public void onClick(DialogInterface dialog,
 									int which) {
 								getListView().invalidateViews();
@@ -154,7 +150,6 @@ public class SettingsActivity extends ListActivity {
 				.setSingleChoiceItems(items, actItem,
 						new DialogInterface.OnClickListener() {
 
-							@Override
 							public void onClick(DialogInterface dialog, int item) {
 
 								// Back converting and store in entity
@@ -169,7 +164,6 @@ public class SettingsActivity extends ListActivity {
 				.setNeutralButton(R.string.ButtonCancel,
 						new DialogInterface.OnClickListener() {
 
-							@Override
 							public void onClick(DialogInterface dialog,
 									int which) {
 								getListView().invalidateViews();
