@@ -6,6 +6,7 @@
     android:gravity="center_horizontal"
     android:layout_marginRight="2dp"
     android:layout_marginLeft="2dp"
+    android:id="@+id/RootView"
     >
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	    android:orientation="horizontal"
@@ -26,7 +27,7 @@
 		    android:textStyle="bold" 
 		    android:gravity="center"
 		    android:background="#FF000000"
-		    android:text="2:30"
+		    android:text="@string/dummy"
         />  
 	    	    
 
@@ -40,7 +41,7 @@
 		    android:padding="2dp"
 		    android:gravity="center"
 		    android:background="#FF000000"
-		    android:text="2:30"
+		    android:text="@string/dummy"
         />        
 
 		<TextView
@@ -95,37 +96,46 @@
 			        android:scaleType="centerInside"
 					android:src="@drawable/teeth"
 					android:layout_width="wrap_content" 
-					android:layout_height="wrap_content"/>				
+					android:layout_height="wrap_content"
+					android:contentDescription="@string/image"
+					/>				
 	        	        
 			<ImageView android:id="@+id/brush_ulo"  
 					android:src="@drawable/brush_ulo" 
 					android:layout_width="wrap_content" 
-					android:layout_height="wrap_content"/>				
+					android:layout_height="wrap_content"
+					android:contentDescription="@string/image"
+					/>				
 			<ImageView android:id="@+id/brush_ufo"  
 					android:src="@drawable/brush_ufo" 
 					android:layout_width="wrap_content" 
 					android:layout_height="wrap_content"
+					android:contentDescription="@string/image"
 					android:visibility="invisible"/>	
 			<ImageView android:id="@+id/brush_uro"  
 					android:src="@drawable/brush_uro" 
 					android:layout_width="wrap_content" 
 					android:layout_height="wrap_content"
+					android:contentDescription="@string/image"
 					android:visibility="invisible"/>	
 	
 			<ImageView android:id="@+id/brush_lro"  
 					android:src="@drawable/brush_lro" 
 					android:layout_width="wrap_content" 
 					android:layout_height="wrap_content"
+					android:contentDescription="@string/image"
 					android:visibility="invisible"/>				
 			<ImageView android:id="@+id/brush_lfo"  
 					android:src="@drawable/brush_lfo" 
 					android:layout_width="wrap_content" 
 					android:layout_height="wrap_content"
+					android:contentDescription="@string/image"
 					android:visibility="invisible"/>	
 			<ImageView android:id="@+id/brush_llo"  
 					android:src="@drawable/brush_llo" 
 					android:layout_width="wrap_content" 
 					android:layout_height="wrap_content"
+					android:contentDescription="@string/image"
 					android:visibility="invisible"/>	
 					
 							
@@ -133,16 +143,19 @@
 					android:src="@drawable/brush_lli" 
 					android:layout_width="wrap_content" 
 					android:layout_height="wrap_content"
+					android:contentDescription="@string/image"
 					android:visibility="invisible"/>				
 			<ImageView android:id="@+id/brush_lfi"  
 					android:src="@drawable/brush_lfi" 
 					android:layout_width="wrap_content" 
 					android:layout_height="wrap_content"
+					android:contentDescription="@string/image"
 					android:visibility="invisible"/>	
 			<ImageView android:id="@+id/brush_lri"  
 					android:src="@drawable/brush_lri" 
 					android:layout_width="wrap_content" 
 					android:layout_height="wrap_content"
+					android:contentDescription="@string/image"
 					android:visibility="invisible"/>	
 				
 				
@@ -150,32 +163,38 @@
 					android:src="@drawable/brush_uri" 
 					android:layout_width="wrap_content" 
 					android:layout_height="wrap_content"
+					android:contentDescription="@string/image"
 					android:visibility="invisible"/>				
 			<ImageView android:id="@+id/brush_ufi"  
 					android:src="@drawable/brush_ufi" 
 					android:layout_width="wrap_content" 
 					android:layout_height="wrap_content"
+					android:contentDescription="@string/image"
 					android:visibility="invisible"/>	
 			<ImageView android:id="@+id/brush_uli"  
 					android:src="@drawable/brush_uli" 
 					android:layout_width="wrap_content" 
 					android:layout_height="wrap_content"
+					android:contentDescription="@string/image"
 					android:visibility="invisible"/>
 					
 			<ImageView android:id="@+id/brush_ult"  
 					android:src="@drawable/brush_ult" 
 					android:layout_width="wrap_content" 
 					android:layout_height="wrap_content"
+					android:contentDescription="@string/image"
 					android:visibility="invisible"/>				
 			<ImageView android:id="@+id/brush_uft"  
 					android:src="@drawable/brush_uft" 
 					android:layout_width="wrap_content" 
 					android:layout_height="wrap_content"
+					android:contentDescription="@string/image"
 					android:visibility="invisible"/>	
 			<ImageView android:id="@+id/brush_urt"  
 					android:src="@drawable/brush_urt" 
 					android:layout_width="wrap_content" 
 					android:layout_height="wrap_content"
+					android:contentDescription="@string/image"
 					android:visibility="invisible"/>
 					
 					
@@ -183,16 +202,19 @@
 					android:src="@drawable/brush_lrt" 
 					android:layout_width="wrap_content" 
 					android:layout_height="wrap_content"
+					android:contentDescription="@string/image"
 					android:visibility="invisible"/>				
 			<ImageView android:id="@+id/brush_lft"  
 					android:src="@drawable/brush_lft" 
 					android:layout_width="wrap_content" 
 					android:layout_height="wrap_content"
+					android:contentDescription="@string/image"
 					android:visibility="invisible"/>	
 			<ImageView android:id="@+id/brush_llt"  
 					android:src="@drawable/brush_llt" 
 					android:layout_width="wrap_content" 
 					android:layout_height="wrap_content"
+					android:contentDescription="@string/image"
 					android:visibility="invisible"/>
 					
     </FrameLayout>

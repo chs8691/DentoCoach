@@ -1,13 +1,8 @@
 package de.cs.android.putzi;
 
-public interface SettingValues {
+import android.net.Uri;
 
-	/**
-	 * How long to brush
-	 * 
-	 * @return int with duration in seconds
-	 */
-	public abstract int getDurationS();
+public interface SettingValues {
 
 	/**
 	 * How long to brush
@@ -17,19 +12,23 @@ public interface SettingValues {
 	public long getDurationMs();
 
 	/**
+	 * How long to brush
 	 * 
-	 * @return
+	 * @return int with duration in seconds
 	 */
-	// TODO implement and use ringtone
-	public abstract String getRingtone();
+	public int getDurationS();
 
-	// TODO Remove ringtoneSwitch - nobody needs this
-	public abstract boolean getRingtoneSwitch();
+	/**
+	 * Ringtone to be played at end of brushing
+	 * 
+	 * @return Uri to ringtone or null if silent configured
+	 */
+	public Uri getRingtone();
 
 	/**
 	 * Brush speed
 	 * 
 	 * @return Speed
 	 */
-	public abstract Speed getSpeed();
+	public Speed getSpeed();
 }

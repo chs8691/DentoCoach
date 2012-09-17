@@ -1,6 +1,7 @@
 package de.cs.android.putzi;
 
 import android.content.Context;
+import android.net.Uri;
 import android.preference.PreferenceManager;
 
 /**
@@ -19,24 +20,18 @@ public class Settings implements SettingValues {
 		this.context = context;
 	}
 
+	public long getDurationMs() {
+		return getDurationS() * 1000;
+	}
+
 	public int getDurationS() {
 		return Integer.valueOf(PreferenceManager.getDefaultSharedPreferences(
 				context).getString(Pref.KEY_PREF_DURATION, ""));
 	}
 
-	public long getDurationMs() {
-		return getDurationS() * 1000;
-	}
-
-	public String getRingtone() {
-		return null;
-		// return PreferenceManager.getDefaultSharedPreferences(
-		// context).getString(Pref.KEY_PREF_RINGTONE, "");
-	}
-
-	public boolean getRingtoneSwitch() {
-
-		return false;
+	public Uri getRingtone() {
+		return Uri.parse(PreferenceManager.getDefaultSharedPreferences(context)
+				.getString(Pref.KEY_PREF_RINGTONE, ""));
 	}
 
 	public Speed getSpeed() {

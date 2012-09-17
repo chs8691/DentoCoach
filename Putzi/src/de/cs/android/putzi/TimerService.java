@@ -5,6 +5,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Binder;
 import android.os.CountDownTimer;
 import android.os.IBinder;
@@ -102,7 +103,8 @@ public class TimerService extends Service {
 
 	// Unique Identification Number for the Notification.
 	// We use it on Notification start, and to cancel it.
-	private final int NOTIFICATION = 1;
+	private final int NOTIFICATION_RUNNING = 1;
+	private final int NOTIFICATION_FINISHED = 2;
 
 	private final IBinder binder = new LocalBinder();
 
@@ -111,12 +113,16 @@ public class TimerService extends Service {
 	 */
 	private long leavingMs;
 
+	private Uri soundUri = null;
+
 	/**
 	 * Time in ms of next tick to raise
 	 */
 	private long nextMs;
 
 	private static final long INTERVALL_MS = 10;
+
+	// private WakeLock wakeLock;
 
 	public long getLeavingMs() {
 		return leavingMs;
@@ -147,7 +153,7 @@ public class TimerService extends Service {
 		Log.v(TAG, "onDestroy()");
 		if (timer != null)
 
-			nMgr.cancel(NOTIFICATION);
+			nMgr.cancel(NOTIFICATION_RUNNING);
 	}
 
 	@Override
@@ -163,6 +169,10 @@ public class TimerService extends Service {
 		this.leavingMs = leavingMs;
 	}
 
+	public void setSound(Uri soundUri) {
+		this.soundUri = soundUri;
+	}
+
 	public void setTickListener(TickListener tickListener) {
 		this.tickListener = tickListener;
 	}
@@ -170,7 +180,47 @@ public class TimerService extends Service {
 	/**
 	 * Show a notification while this service is running.
 	 */
-	private void showNotification() {
+	private void showNotificationFinished() {
+		// In this sample, we'll use the same text for the ticker and the
+		// expanded notification
+		CharSequence text = getText(R.string.notificationFinished);
+
+		// Set the icon, scrolling text and time stamp
+		Notification notification = new Notification(
+				R.drawable.notification_finished,
+				getText(R.string.notificationFinished),
+				System.currentTimeMillis());
+
+		// Notification must not be cleared by the user
+		notification.flags = notification.flags | Notification.FLAG_AUTO_CANCEL;
+
+		// Play sound at the end, if it has been configured
+		if (soundUri != null)
+			notification.sound = soundUri;
+
+		Intent toLaunch = new Intent(getApplicationContext(),
+				MainActivity.class);
+		// Two magic coding lines: Return to the running Activity
+		toLaunch.setAction("android.intent.action.MAIN");
+		toLaunch.addCategory("android.intent.category.LAUNCHER");
+		// The PendingIntent to launch our activity if the user selects this
+		// notification
+		PendingIntent contentIntent = PendingIntent.getActivity(
+				getApplicationContext(), 0, toLaunch, 0);
+
+		// Set the info for the views that show in the notification panel.
+		notification.setLatestEventInfo(this,
+				getText(R.string.noticicationTitle),
+				getText(R.string.notificationFinished), contentIntent);
+
+		// Send the notification.
+		nMgr.notify(NOTIFICATION_FINISHED, notification);
+	}
+
+	/**
+	 * Show a notification while this service is running.
+	 */
+	private void showNotificationRunning() {
 		// In this sample, we'll use the same text for the ticker and the
 		// expanded notification
 		CharSequence text = getText(R.string.notificationStarted);
@@ -198,12 +248,17 @@ public class TimerService extends Service {
 				getText(R.string.noticicationTitle), "", contentIntent);
 
 		// Send the notification.
-		nMgr.notify(NOTIFICATION, notification);
+		nMgr.notify(NOTIFICATION_RUNNING, notification);
 	}
 
 	public void start() {
 		Log.v(TAG, "start() with leavingMs=" + leavingMs);
 		nextMs = leavingMs;
+
+		// Remove previous notifications if exists
+		nMgr.cancel(NOTIFICATION_FINISHED);
+		nMgr.cancel(NOTIFICATION_RUNNING);
+
 		timer = new CountDownTimer(leavingMs, INTERVALL_MS) {
 
 			/**
@@ -213,7 +268,7 @@ public class TimerService extends Service {
 			public void onFinish() {
 				Log.v(TAG, "onFinish()");
 				leavingMs = nextMs = 0;
-				nMgr.cancel(NOTIFICATION);
+				showNotificationFinished();
 				stop();
 			}
 
@@ -232,9 +287,20 @@ public class TimerService extends Service {
 			}
 
 		};
+
 		timer.start();
+
 		tickListener.onStart(leavingMs);
-		showNotification();
+		showNotificationRunning();
+
+		// Switch on wake lock
+		// PowerManager pm = (PowerManager)
+		// getSystemService(Context.POWER_SERVICE);
+
+		// wakeLock = pm.newWakeLock(PowerManager.ACQUIRE_CAUSES_WAKEUP,
+		// "Putzi");
+		// wakeLock.acquire(leavingMs);
+
 	}
 
 	public void stop() {
@@ -247,7 +313,11 @@ public class TimerService extends Service {
 		if (tickListener != null) {
 			tickListener.onStop(leavingMs);
 		}
-		nMgr.cancel(NOTIFICATION);
+		nMgr.cancel(NOTIFICATION_RUNNING);
+
+		// Switch off wake lock
+		// wakeLock.release();
+
 		stopSelf();
 
 	}

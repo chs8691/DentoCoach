@@ -4,46 +4,9 @@
     <string name="startButtonStop">Stop</string>    
     <string name="resetButton">Reset</string>
     <string name="round">0</string>
-    <string name="options">Options</string>
+    <string name="dummy">2:30</string>
 
-    <string name="about">About</string>
-    <string name="aboutHeader">About DentoCoach \n</string>
-    <string name="settingsHeader">About DentoCoach \n</string>
-    <string name="aboutText">Usage of this software doesn\'t release you from visiting your dentist.\n</string>
-    <string name="aboutFooter">chs 2011</string>
-	<string name="AboutTitle">About</string>
 
-    <string name="settingMenuAudioToggle">Audio on</string>
-    <string name="settingMenuAudioChoose">Choose Audio</string>
-    <string name="settingMenuBrushingTypeChoose">Choose Brushing Type</string>
-    <string name="settingMenuBrushingSpeed">Choose Brushing Speed</string>
-    <string name="settingChooseSound">Choose Sound</string>
-
-    <string name="settingsDialogHeader">Settings</string>
-    
-    <string name="settingSpeedHeader">Speed</string>
-    <string name="settingSpeedDescription">The brush runs</string>
-    <string name="speed_Slow">slow</string>
-    <string name="speed_Medium">medium</string>
-    <string name="speed_Fast">fast</string>
-    
-    <string name="settingDurationHeader">Duration</string>
-    <string name="settingDurationDescription">The brush runs for</string>
-    <string name="unitMinShort">min</string>
-    <string name="unitMinLong">minutes</string>
-    
-   <string name="settingRingtoneSwitchHeader">Ringtone switch</string>
-   <string name="settingRingtoneSwitchDescription">Play final ringtone:</string>
-   <string name="ringtoneSwitchOn">On</string>
-   <string name="ringtoneSwitchOff">Off</string>
-   
-   <string name="settingRingtoneHeader">Ringtone</string>
-   <string name="settingRingtoneDescription">Selected ringtone:</string>   
-   
-    
-    <string name="ButtonCancel">Cancel</string>
-    <string name="ButtonClose">Close</string>
-    
     <!-- Main -->
 	<string name="menu_settings">Settings</string>
     <string name="title_activity_main">Putzi</string>
@@ -57,7 +20,10 @@
     <string name="pref_ringtone_title">Ringtone</string>
     <string name="pref_Ringtone_summary">Signal at the end:</string>
     <string name="notificationStarted">Brushing</string>
+    <string name="notificationFinished">Brushing finished</string>
     <string name="noticicationTitle">Putzi</string>
     
     
+    <!-- Helper -->
+    <string name="image">Image</string>
 </resources>

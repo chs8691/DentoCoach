@@ -283,6 +283,9 @@ public class MainActivity extends Activity {
 			timerService = ((TimerService.LocalBinder) service).getService();
 			Log.v(TAG, "timerService=" + timerService);
 
+			// Sound for finish notification
+			timerService.setSound(settings.getRingtone());
+
 			// Initialize activities timer dependent objects
 
 			// Timer still running
@@ -301,23 +304,29 @@ public class MainActivity extends Activity {
 				// finished
 				if (bundlePreviousState.equals(BundlePreviousState.RUNNING)) {
 					Log.v(TAG, "Previous state=running");
-					timerService.setLeavingMs(settings.getDurationMs());
+					timerService.setLeavingMs(0);
+					resetBtn.setEnabled(true);
+					startBtn.setEnabled(false);
 
 				}
 				// Last Session closed with a stopped timer
 				else if (bundlePreviousState
 						.equals(BundlePreviousState.STOPPED)) {
 					Log.v(TAG, "Previous state=stopped");
+					timerService.setLeavingMs(bundledLeavingMs);
+					resetBtn.setEnabled(true);
+					startBtn.setEnabled(true);
 				}
 				// New Session
 				else {
 					Log.v(TAG, "No previous state");
-					timerService.setLeavingMs(bundledLeavingMs);
+					timerService.setLeavingMs(settings.getDurationMs());
+					resetBtn.setEnabled(false);
+					startBtn.setEnabled(true);
 				}
 
 				startBtn.setText(R.string.startButtonStart);
 				animationController.stop();
-				resetBtn.setEnabled(true);
 			}
 
 			refreshTimerView();
@@ -338,6 +347,9 @@ public class MainActivity extends Activity {
 					refreshTimerView();
 					animationController.stop();
 					resetBtn.setEnabled(true);
+					if (pLeavingMs == 0)
+						startBtn.setEnabled(false);
+
 				}
 
 				public void onTick(long pLeavingMs) {
@@ -394,7 +406,9 @@ public class MainActivity extends Activity {
 		super.onActivityResult(requestCode, resultCode, data);
 
 		if (requestCode == SHOW_PREFERENCES) {
-			// TODO was muss man nach Änderungen an den Einstellungen machen?
+			settings = new Settings(this);
+			refreshDurationView();
+			reset();
 		}
 	}
 
@@ -435,7 +449,10 @@ public class MainActivity extends Activity {
 
 		settings = new Settings(this);
 
-		if (savedInstanceState != null) {
+		if (savedInstanceState == null) {
+			Log.v(TAG, "no bundle");
+			bundlePreviousState = BundlePreviousState.NULL;
+		} else {
 			if (savedInstanceState.getString(BUNDLE_PREVIOUS_STATE_KEY).equals(
 					BundlePreviousState.RUNNING.name())) {
 				bundlePreviousState = BundlePreviousState.RUNNING;
@@ -446,7 +463,6 @@ public class MainActivity extends Activity {
 						.getLong(BUNDLE_LEAVING_MS);
 				bundlePreviousState = BundlePreviousState.STOPPED;
 			}
-			bundlePreviousState = BundlePreviousState.NULL;
 		}
 
 		progressBar = (ProgressBar) findViewById(R.id.progress_bar);
@@ -454,10 +470,7 @@ public class MainActivity extends Activity {
 
 		timerView = (TextView) findViewById(R.id.count_down);
 
-		// Update duration setting in view
-		Date endTime = new Date(settings.getDurationMs());
-		((TextView) findViewById(R.id.end_time)).setText(String.format(
-				DURATION_FORMAT, endTime));
+		refreshDurationView();
 
 		animationController = new AnimationController(settings.getSpeed());
 		animationController.reset(savedInstanceState);
@@ -484,8 +497,15 @@ public class MainActivity extends Activity {
 					startService(new Intent(getApplicationContext(),
 							TimerService.class));
 
-					timerService.setLeavingMs(settings.getDurationMs());
+					// timerService.setLeavingMs(settings.getDurationMs());
 					timerService.start();
+
+					// Keep screen on while view is visible
+					// TODO wieder ausschalten
+					// WindowManager wm = (WindowManager)
+					// getSystemService(Context.WINDOW_SERVICE);
+					// wm.updateViewLayout(v, new WindowManager.LayoutParams(
+					// WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON));
 
 				}
 
@@ -497,11 +517,7 @@ public class MainActivity extends Activity {
 		resetBtn.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
-				Log.v(TAG, "resetBtn.onClick()");
-
-				timerService.setLeavingMs(settings.getDurationMs());
-				refreshTimerView();
-				animationController.reset(null);
+				reset();
 			}
 
 		});
@@ -519,6 +535,7 @@ public class MainActivity extends Activity {
 
 		switch (item.getItemId()) {
 		case R.id.menu_settings:
+			timerService.stop();
 			startActivityForResult(new Intent(this, Pref.class),
 					SHOW_PREFERENCES);
 
@@ -576,11 +593,28 @@ public class MainActivity extends Activity {
 
 	}
 
+	private void refreshDurationView() {
+		// Update duration setting in view
+		Date endTime = new Date(settings.getDurationMs());
+		((TextView) findViewById(R.id.end_time)).setText(String.format(
+				DURATION_FORMAT, endTime));
+	}
+
 	private void refreshTimerView() {
 		progressBar.setProgress((int) (settings.getDurationMs() - timerService
 				.getLeavingMs()));
 		date.setTime(timerService.getLeavingMs());
 		timerView.setText(String.format(DURATION_FORMAT, date));
+	}
+
+	private void reset() {
+		Log.v(TAG, "reset()");
+
+		timerService.setLeavingMs(settings.getDurationMs());
+		refreshTimerView();
+		animationController.reset(null);
+		startBtn.setEnabled(true);
+		resetBtn.setEnabled(false);
 	}
 
 }
