@@ -9,7 +9,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.content.res.Configuration;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
@@ -34,69 +34,78 @@ public class MainActivity extends Activity {
 		private static final String AC_RUN = "acRun";
 		private static final String AC_POS = "acPos";
 		private static final String AC_ROUND = "acRound";
-		private RoundListener roundListener = null;
+		private final RoundListener roundListener;
 		private int pos;
 		private boolean run = true;
 		private int round = 0;
 		private Part actPart = null;
+		private ImageView image = null;
 
 		private final List<Part> partList = new ArrayList<Part>();
 
 		public AnimationController(Speed speed) {
 
+			this.image = (ImageView) findViewById(R.id.image_brush);
 			setSpeed(speed);
 			builder();
-			reset(null);
+			this.roundListener = new RoundListener() {
+
+				public void onRoundChanged(int round) {
+					roundView.setText(String.valueOf(round));
+				}
+			};
+
 		}
 
 		private void builder() {
+
 			// upper out
-			partList.add(new Part(R.id.brush_ulo, getPartDuration(), 20, -40,
-					this));
-			partList.add(new Part(R.id.brush_ufo, getPartDuration(), 40, 0,
-					this));
-			partList.add(new Part(R.id.brush_uro, getPartDuration(), 20, 40,
-					this));
+			partList.add(new Part(R.drawable.brush_ulo, getPartDuration(), 20,
+					-40, this, image));
+			partList.add(new Part(R.drawable.brush_ufo, getPartDuration(), 40,
+					0, this, image));
+			partList.add(new Part(R.drawable.brush_uro, getPartDuration(), 20,
+					40, this, image));
 
 			// lower out
-			partList.add(new Part(R.id.brush_lro, getPartDuration(), -20, 40,
-					this));
-			partList.add(new Part(R.id.brush_lfo, getPartDuration(), -40, 0,
-					this));
-			partList.add(new Part(R.id.brush_llo, getPartDuration(), -20, -40,
-					this));
+			partList.add(new Part(R.drawable.brush_lro, getPartDuration(), -20,
+					40, this, image));
+			partList.add(new Part(R.drawable.brush_lfo, getPartDuration(), -40,
+					0, this, image));
+			partList.add(new Part(R.drawable.brush_llo, getPartDuration(), -20,
+					-40, this, image));
 
 			// lower in
-			partList.add(new Part(R.id.brush_lli, getPartDuration(), 20, 40,
-					this));
-			partList.add(new Part(R.id.brush_lfi, getPartDuration(), 40, 0,
-					this));
-			partList.add(new Part(R.id.brush_lri, getPartDuration(), 20, -40,
-					this));
+			partList.add(new Part(R.drawable.brush_lli, getPartDuration(), 20,
+					40, this, image));
+			partList.add(new Part(R.drawable.brush_lfi, getPartDuration(), 40,
+					0, this, image));
+			partList.add(new Part(R.drawable.brush_lri, getPartDuration(), 20,
+					-40, this, image));
 
 			// upper in
-			partList.add(new Part(R.id.brush_uri, getPartDuration(), -20, -40,
-					this));
-			partList.add(new Part(R.id.brush_ufi, getPartDuration(), -40, 0,
-					this));
-			partList.add(new Part(R.id.brush_uli, getPartDuration(), -20, 40,
-					this));
+			partList.add(new Part(R.drawable.brush_uri, getPartDuration(), -20,
+					-40, this, image));
+			partList.add(new Part(R.drawable.brush_ufi, getPartDuration(), -40,
+					0, this, image));
+			partList.add(new Part(R.drawable.brush_uli, getPartDuration(), -20,
+					40, this, image));
 
 			// upper top
-			partList.add(new Part(R.id.brush_ult, getPartDuration(), 20, -40,
-					this));
-			partList.add(new Part(R.id.brush_uft, getPartDuration(), 40, 0,
-					this));
-			partList.add(new Part(R.id.brush_urt, getPartDuration(), 20, 40,
-					this));
+			partList.add(new Part(R.drawable.brush_ult, getPartDuration(), 20,
+					-40, this, image));
+			partList.add(new Part(R.drawable.brush_uft, getPartDuration(), 40,
+					0, this, image));
+			partList.add(new Part(R.drawable.brush_urt, getPartDuration(), 20,
+					40, this, image));
 
 			// lower top
-			partList.add(new Part(R.id.brush_lrt, getPartDuration(), -20, 40,
-					this));
-			partList.add(new Part(R.id.brush_lft, getPartDuration(), -40, 0,
-					this));
-			partList.add(new Part(R.id.brush_llt, getPartDuration(), -20, -40,
-					this));
+			partList.add(new Part(R.drawable.brush_lrt, getPartDuration(), -20,
+					40, this, image));
+			partList.add(new Part(R.drawable.brush_lft, getPartDuration(), -40,
+					0, this, image));
+			partList.add(new Part(R.drawable.brush_llt, getPartDuration(), -20,
+					-40, this, image));
 
 		}
 
@@ -104,17 +113,50 @@ public class MainActivity extends Activity {
 			return (speed.value() * 1000);
 		}
 
+		void logSharedPreferences() {
+			SharedPreferences sp = getPreferences(0);
+
+			if (!sp.contains(AC_POS)) {
+				Log.v(TAG, "animationController.logSharedPrefefences(): "
+						+ AC_POS + " not found");
+			} else {
+				Log.v(TAG, "animationController.logSharedPreferences(): "
+						+ AC_POS + "=" + sp.getInt(AC_POS, -1));
+
+			}
+			if (!sp.contains(AC_ROUND)) {
+				Log.v(TAG, "animationController.logSharedPrefefences(): "
+						+ AC_ROUND + " not found");
+			} else {
+				Log.v(TAG, "animationController.logSharedPreferences(): "
+						+ AC_ROUND + "=" + sp.getInt(AC_ROUND, -1));
+
+			}
+			if (!sp.contains(AC_RUN)) {
+				Log.v(TAG, "animationController.logSharedPrefefences(): "
+						+ AC_RUN + " not found");
+			} else {
+				Log.v(TAG, "animationController.logSharedPreferences(): "
+						+ AC_RUN + "=" + sp.getBoolean(AC_RUN, false));
+
+			}
+
+		}
+
 		private void next() {
 			if (!run)
 				return;
 
+			// Last one just shown
 			if (pos >= partList.size()) {
 				pos = 0;
 				roundListener.onRoundChanged(++round);
 			}
-
-			if (actPart != null)
-				actPart.setInvisible();
+			// Not the last one: hide previous one
+			else {
+				if (actPart != null)
+					actPart.setInvisible();
+			}
 
 			Log.v(TAG, "AnimationController.next(): pos=" + pos);
 			actPart = partList.get(pos++);
@@ -132,41 +174,33 @@ public class MainActivity extends Activity {
 		}
 
 		public void onAnimationStart(Animation animation) {
-			// Nothing to do
+			actPart.showImage();
 
 		}
 
-		/**
-		 * 
-		 * @param saveInstanceState
-		 *            Bundle with the state to restore or null
-		 */
-		public void reset(Bundle saveInstanceState) {
-			if (saveInstanceState != null) {
-				this.pos = saveInstanceState.getInt(AC_POS);
-				this.round = saveInstanceState.getInt(AC_ROUND);
-				Log.v(TAG, "AnimationController.reset(): Bundle pos=" + pos);
+		public void reset(SharedPreferences pref) {
+			if (pref != null) {
+				this.pos = pref.getInt(AC_POS, 0);
+				this.round = pref.getInt(AC_ROUND, 0);
+				Log.v(TAG, "AnimationController.reset(): Last session pos="
+						+ pos);
 			} else {
 				this.pos = 0;
 				this.round = 0;
-				Log.v(TAG, "AnimationController.reset(): no Bundle pos=" + pos);
-			}
-
-			// hide all old brush positions, not fine but works
-			for (Part aPart : partList) {
-				aPart.setInvisible();
+				Log.v(TAG, "AnimationController.reset(): no last session pos="
+						+ pos);
 			}
 
 			// Show start brush
 			actPart = partList.get(pos);
 			actPart.showImage();
 
+			// Set round view
+			if (this.roundListener != null)
+				this.roundListener.onRoundChanged(this.round);
+
 			this.run = false;
 
-		}
-
-		void setRoundListener(RoundListener roundListener) {
-			this.roundListener = roundListener;
 		}
 
 		public void setSpeed(Speed speed) {
@@ -188,18 +222,23 @@ public class MainActivity extends Activity {
 					+ pos);
 		}
 
-		private void storeState(Bundle outState) {
+		private void storeState(SharedPreferences.Editor editor) {
 			Log.v(TAG, "stroreState(): pos/round/run=" + pos + "/" + round
 					+ "/" + run);
-			outState.putInt(AC_POS, this.pos);
-			outState.putInt(AC_ROUND, this.round);
-			outState.putBoolean(AC_RUN, this.run);
+			editor.putInt(AC_POS, this.pos);
+			editor.putInt(AC_ROUND, this.round);
+			editor.putBoolean(AC_RUN, this.run);
 		}
 
 	}
 
-	enum BundlePreviousState {
+	enum InstanceState {
 		NULL, RUNNING, STOPPED
+	}
+
+	private enum InstanceStateKey {
+
+		PREVIOUS_STATE_KEY, LEAVING_MS;
 	}
 
 	class Part {
@@ -207,30 +246,32 @@ public class MainActivity extends Activity {
 		private final float x;
 		private final float y;
 		private final AnimationListener listener;
-		private final ImageView i;
+		private final int drawableId;
+		private final ImageView image;
 
 		private Part(int id, int duration, float x, float y,
-				AnimationListener listener) {
+				AnimationListener listener, ImageView frame) {
 			this.duration = duration;
 			this.x = x;
 			this.y = y;
 			this.listener = listener;
-			this.i = (ImageView) findViewById(id);
+			this.drawableId = id;
+			this.image = frame;
 
 		}
 
 		void setInvisible() {
-			i.clearAnimation();
-			i.setVisibility(ImageView.INVISIBLE);
+			image.setVisibility(ImageView.INVISIBLE);
+			image.setImageResource(0);
+			image.clearAnimation();
 		}
 
 		void showImage() {
-
-			i.setVisibility(ImageView.VISIBLE);
+			image.setImageResource(drawableId);
+			image.setVisibility(ImageView.VISIBLE);
 		}
 
 		void start() {
-			showImage();
 			AnimationSet set = new AnimationSet(false);
 
 			Animation aniMove = new TranslateAnimation(0, x, 0, y);
@@ -238,37 +279,35 @@ public class MainActivity extends Activity {
 			aniMove.setAnimationListener(listener);
 			set.addAnimation(aniMove);
 
-			i.startAnimation(set);
+			image.startAnimation(set);
 
 		}
 	}
 
-	private static final String BUNDLE_PREVIOUS_STATE_KEY = "PreviousStateKey";
+	interface RoundListener {
+		public void onRoundChanged(int round);
 
-	private static final String BUNDLE_LEAVING_MS = "leavingMs";
+	}
 
 	private final Date date = new Date(0);
 
 	private ProgressBar progressBar;
 
 	private static final String DURATION_FORMAT = "%1$tM:%1$tS";
-
 	private static final String TAG = "PutziActivity";
-
 	private Button startBtn = null;
 	private Button resetBtn = null;
+
 	private TextView roundView = null;
+
 	private static final int SHOW_PREFERENCES = 1;
 
 	private AnimationController animationController = null;
 
 	private SettingValues settings;
-
-	// private static final int DIALOG_ABOUT_ID = 1;
-
 	private TimerService timerService;
-
 	private boolean timerServiceIsBound;
+
 	private final ServiceConnection serviceConnection = new ServiceConnection() {
 		private static final String TAG = "serviceConnection";
 
@@ -282,6 +321,32 @@ public class MainActivity extends Activity {
 			Log.v(TAG, "onServiceConnected()");
 			timerService = ((TimerService.LocalBinder) service).getService();
 			Log.v(TAG, "timerService=" + timerService);
+
+			long previousLeavingMs = 0;
+
+			InstanceState previousState = InstanceState.NULL;
+			// Read old session status
+			SharedPreferences pref = getPreferences(0);
+			logSharedPreferences();
+
+			animationController.reset(pref);
+
+			// Previous session: Timer was runnning
+			if (pref.getString(InstanceStateKey.PREVIOUS_STATE_KEY.name(), "")
+					.equals(InstanceState.RUNNING.name())) {
+				previousState = InstanceState.RUNNING;
+			}
+			// Previous session: Timer was stopped
+			else if (pref.getString(InstanceStateKey.PREVIOUS_STATE_KEY.name(),
+					"").equals(InstanceState.STOPPED.name())) {
+				previousState = InstanceState.STOPPED;
+				previousLeavingMs = pref.getLong(
+						InstanceStateKey.LEAVING_MS.name(), 0);
+			}
+			// First Session or returned from Settings
+			else {
+				previousState = InstanceState.NULL;
+			}
 
 			// Sound for finish notification
 			timerService.setSound(settings.getRingtone());
@@ -300,9 +365,20 @@ public class MainActivity extends Activity {
 			else {
 				Log.v(TAG, "Timer is not running");
 
+				// Brush at the end not used: Reset
+				// Same happens like visible finished timer
+				if (previousLeavingMs == 0) {
+					Log.v(TAG, "LeavingMs=0: reset");
+					timerService.setLeavingMs(settings.getDurationMs());
+					resetBtn.setEnabled(false);
+					startBtn.setEnabled(true);
+					animationController.reset(null);
+
+				}
+
 				// Timer was running at last activity stop but meanwhile has
 				// finished
-				if (bundlePreviousState.equals(BundlePreviousState.RUNNING)) {
+				else if (previousState.equals(InstanceState.RUNNING)) {
 					Log.v(TAG, "Previous state=running");
 					timerService.setLeavingMs(0);
 					resetBtn.setEnabled(true);
@@ -310,10 +386,9 @@ public class MainActivity extends Activity {
 
 				}
 				// Last Session closed with a stopped timer
-				else if (bundlePreviousState
-						.equals(BundlePreviousState.STOPPED)) {
+				else if (previousState.equals(InstanceState.STOPPED)) {
 					Log.v(TAG, "Previous state=stopped");
-					timerService.setLeavingMs(bundledLeavingMs);
+					timerService.setLeavingMs(previousLeavingMs);
 					resetBtn.setEnabled(true);
 					startBtn.setEnabled(true);
 				}
@@ -343,13 +418,21 @@ public class MainActivity extends Activity {
 				}
 
 				public void onStop(long pLeavingMs) {
-					startBtn.setText(R.string.startButtonStart);
-					refreshTimerView();
-					animationController.stop();
-					resetBtn.setEnabled(true);
-					if (pLeavingMs == 0)
-						startBtn.setEnabled(false);
-
+					if (pLeavingMs == 0) {
+						startBtn.setText(R.string.startButtonStart);
+						timerService.setLeavingMs(settings.getDurationMs());
+						animationController.stop();
+						animationController.reset(null);
+						resetBtn.setEnabled(false);
+						startBtn.setEnabled(true);
+						refreshTimerView();
+						refreshDurationView();
+					} else {
+						startBtn.setText(R.string.startButtonStart);
+						animationController.stop();
+						resetBtn.setEnabled(true);
+						refreshTimerView();
+					}
 				}
 
 				public void onTick(long pLeavingMs) {
@@ -370,9 +453,6 @@ public class MainActivity extends Activity {
 	};
 
 	private TextView timerView = null;
-
-	private long bundledLeavingMs;
-	private BundlePreviousState bundlePreviousState = BundlePreviousState.NULL;
 
 	/**
 	 * Establish a connection with the service if needed. We use an explicit
@@ -401,14 +481,61 @@ public class MainActivity extends Activity {
 		}
 	}
 
+	private void logSharedPreferences() {
+		SharedPreferences sp = getPreferences(0);
+
+		if (!sp.contains(InstanceStateKey.PREVIOUS_STATE_KEY.name())) {
+			Log.v(TAG, "logSharedPrefefences(): "
+					+ InstanceStateKey.PREVIOUS_STATE_KEY.name() + " not found");
+		} else {
+			Log.v(TAG,
+					"logSharedPreferences(): "
+							+ InstanceStateKey.PREVIOUS_STATE_KEY.name()
+							+ "="
+							+ sp.getString(
+									InstanceStateKey.PREVIOUS_STATE_KEY.name(),
+									"NULL"));
+
+		}
+		if (!sp.contains(InstanceStateKey.LEAVING_MS.name())) {
+			Log.v(TAG,
+					"logSharedPrefefences(): "
+							+ InstanceStateKey.LEAVING_MS.name() + " not found");
+		} else {
+			Log.v(TAG,
+					"logSharedPreferences(): "
+							+ InstanceStateKey.LEAVING_MS.name()
+							+ "="
+							+ sp.getLong(InstanceStateKey.LEAVING_MS.name(), -1));
+		}
+		animationController.logSharedPreferences();
+	}
+
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		Log.v(TAG, "onActivityResult");
 		super.onActivityResult(requestCode, resultCode, data);
 
+		// Settings might be changed
 		if (requestCode == SHOW_PREFERENCES) {
+
+			// Settings can be changed from settings menu: init here and in
+			// onCreate()
 			settings = new Settings(this);
-			refreshDurationView();
-			reset();
+
+			SharedPreferences.Editor editor = getPreferences(0).edit();
+
+			// Instantiate new ac because of possible changed speed
+			animationController = new AnimationController(settings.getSpeed());
+			animationController.storeState(editor);
+
+			editor.putString(InstanceStateKey.PREVIOUS_STATE_KEY.name(),
+					InstanceState.NULL.name());
+
+			boolean commitResult = editor.commit();
+			Log.v(TAG, "SharedPreferences.commit=" + commitResult);
+			logSharedPreferences();
+
 		}
 	}
 
@@ -426,20 +553,16 @@ public class MainActivity extends Activity {
 		}
 	}
 
-	@Override
-	public void onConfigurationChanged(Configuration newConfig) {
-		Log.v(TAG, "onConfigurationChanged()");
-		super.onConfigurationChanged(newConfig);
-		// If enabled, switching to landscape doesn't change the layout.xml
-		// if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE
-		// || newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
-		// }
-	}
+	// @Override
+	// public void onConfigurationChanged(Configuration newConfig) {
+	// Log.v(TAG, "onConfigurationChanged()");
+	// super.onConfigurationChanged(newConfig);
+	// }
 
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceStatexx) {
 		Log.v(TAG, "onCreate()");
-		super.onCreate(savedInstanceState);
+		super.onCreate(savedInstanceStatexx);
 		setContentView(R.layout.activity_main);
 
 		// For very first call: Initialize preferences. Otherwise: do nothing
@@ -447,40 +570,14 @@ public class MainActivity extends Activity {
 
 		roundView = (TextView) findViewById(R.id.round);
 
+		// Will also be set in onStart()
 		settings = new Settings(this);
 
-		if (savedInstanceState == null) {
-			Log.v(TAG, "no bundle");
-			bundlePreviousState = BundlePreviousState.NULL;
-		} else {
-			if (savedInstanceState.getString(BUNDLE_PREVIOUS_STATE_KEY).equals(
-					BundlePreviousState.RUNNING.name())) {
-				bundlePreviousState = BundlePreviousState.RUNNING;
-			} else {
-				Log.v(TAG, "onCreate():set bundledLeavingMs="
-						+ bundledLeavingMs);
-				bundledLeavingMs = savedInstanceState
-						.getLong(BUNDLE_LEAVING_MS);
-				bundlePreviousState = BundlePreviousState.STOPPED;
-			}
-		}
-
 		progressBar = (ProgressBar) findViewById(R.id.progress_bar);
-		progressBar.setMax((int) settings.getDurationMs());
 
 		timerView = (TextView) findViewById(R.id.count_down);
 
-		refreshDurationView();
-
 		animationController = new AnimationController(settings.getSpeed());
-		animationController.reset(savedInstanceState);
-		animationController.setRoundListener(new RoundListener() {
-
-			public void onRoundChanged(int round) {
-				roundView.setText(String.valueOf(round));
-			}
-
-		});
 
 		startBtn = (Button) findViewById(R.id.startBtn);
 		startBtn.setOnClickListener(new View.OnClickListener() {
@@ -497,11 +594,9 @@ public class MainActivity extends Activity {
 					startService(new Intent(getApplicationContext(),
 							TimerService.class));
 
-					// timerService.setLeavingMs(settings.getDurationMs());
 					timerService.start();
 
 					// Keep screen on while view is visible
-					// TODO wieder ausschalten
 					// WindowManager wm = (WindowManager)
 					// getSystemService(Context.WINDOW_SERVICE);
 					// wm.updateViewLayout(v, new WindowManager.LayoutParams(
@@ -535,7 +630,9 @@ public class MainActivity extends Activity {
 
 		switch (item.getItemId()) {
 		case R.id.menu_settings:
-			timerService.stop();
+			if (timerService != null)
+				timerService.stop();
+
 			startActivityForResult(new Intent(this, Pref.class),
 					SHOW_PREFERENCES);
 
@@ -546,50 +643,43 @@ public class MainActivity extends Activity {
 	}
 
 	@Override
-	protected void onRestoreInstanceState(Bundle savedInstanceState) {
-		Log.v(TAG, "onRestoreInstanceState()");
-		super.onRestoreInstanceState(savedInstanceState);
-		animationController.reset(savedInstanceState);
-	}
-
-	/** Called e.g. with orientation switch */
-	@Override
-	protected void onSaveInstanceState(Bundle outState) {
-		Log.v(TAG, "onSaveInstanceState()");
-
-		if (animationController != null) {
-			animationController.storeState(outState);
-		}
-		if (timerService.isRunning()) {
-			Log.v(TAG, "onSaveInstanceState() Timer.isRunning=true");
-			outState.putString(BUNDLE_PREVIOUS_STATE_KEY,
-					BundlePreviousState.RUNNING.name());
-
-		} else {
-			Log.v(TAG,
-					"onSaveInstanceState() save from stopped Timer LeavingMs="
-							+ timerService.getLeavingMs());
-			outState.putString(BUNDLE_PREVIOUS_STATE_KEY,
-					BundlePreviousState.STOPPED.name());
-			outState.putLong(BUNDLE_LEAVING_MS, timerService.getLeavingMs());
-		}
-
-		super.onSaveInstanceState(outState);
-	}
-
-	@Override
 	protected void onStart() {
 		Log.v(TAG, "onStart()");
 		super.onStart();
+
+		progressBar.setMax((int) settings.getDurationMs());
+		refreshDurationView();
+
 		// bind and start the service (maybe it's still running but unbound
 		doBindService();
+
 	}
 
 	@Override
 	protected void onStop() {
-		Log.v(TAG, "onStop()");
-		doUnbindService();
 		super.onStop();
+		Log.v(TAG, "onStop()");
+
+		SharedPreferences.Editor editor = getPreferences(0).edit();
+		if (animationController != null) {
+			animationController.storeState(editor);
+		}
+		if (timerService.isRunning()) {
+			editor.putString(InstanceStateKey.PREVIOUS_STATE_KEY.name(),
+					InstanceState.RUNNING.name());
+
+		} else {
+			editor.putString(InstanceStateKey.PREVIOUS_STATE_KEY.name(),
+					InstanceState.STOPPED.name());
+			editor.putLong(InstanceStateKey.LEAVING_MS.name(),
+					timerService.getLeavingMs());
+		}
+
+		boolean commitResult = editor.commit();
+		Log.v(TAG, "SharedPreferences.commit=" + commitResult);
+		logSharedPreferences();
+
+		doUnbindService();
 
 	}
 
@@ -615,10 +705,7 @@ public class MainActivity extends Activity {
 		animationController.reset(null);
 		startBtn.setEnabled(true);
 		resetBtn.setEnabled(false);
+		refreshDurationView();
+
 	}
-
-}
-
-interface RoundListener {
-	public void onRoundChanged(int round);
 }

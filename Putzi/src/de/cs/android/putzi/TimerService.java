@@ -4,11 +4,14 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Binder;
 import android.os.CountDownTimer;
 import android.os.IBinder;
+import android.os.PowerManager;
+import android.os.PowerManager.WakeLock;
 import android.util.Log;
 
 public class TimerService extends Service {
@@ -17,38 +20,11 @@ public class TimerService extends Service {
 	 * the same process as its clients, we don't need to deal with IPC.
 	 */
 	public class LocalBinder extends Binder {
-		// /**
-		// * Access and initialize the service.
-		// *
-		// * @param A
-		// * TickListener to update view etc. every tick
-		// * @param durationSec
-		// * @return
-		// */
-		// TimerService getService(TickListener tickListener, int durationSec) {
-		// TimerService.this.tickListener = tickListener;
-		// TimerService.this.durationSec = durationSec;
-		// return TimerService.this;
-		// }
 
 		TimerService getService() {
 			Log.v(TAG, "getService()");
 			return TimerService.this;
 		}
-
-		// /**
-		// * Stopps the timer without a reset. Continue with start()
-		// */
-		// void pause() {
-		//
-		// }
-		//
-		// /**
-		// * Start or restarts the timer
-		// */
-		// void start() {
-		//
-		// }
 
 	}
 
@@ -80,22 +56,10 @@ public class TimerService extends Service {
 		void onTick(long leavingMs);
 	}
 
+	private WakeLock wakeLock = null;
+
 	private CountDownTimer timer = null;
 	private TickListener tickListener = null;
-
-	// /**
-	// * Will be executed with every tick of the timer, e.g. every second
-	// *
-	// * @author ChristianSchulzendor
-	// *
-	// */
-	// public interface TickListener {
-	// void onTick();
-	// }
-
-	// private TickListener tickListener;
-	//
-	// private int durationSec;
 
 	private static final String TAG = "TimerService";
 
@@ -294,12 +258,14 @@ public class TimerService extends Service {
 		showNotificationRunning();
 
 		// Switch on wake lock
-		// PowerManager pm = (PowerManager)
-		// getSystemService(Context.POWER_SERVICE);
+		PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
 
-		// wakeLock = pm.newWakeLock(PowerManager.ACQUIRE_CAUSES_WAKEUP,
-		// "Putzi");
-		// wakeLock.acquire(leavingMs);
+		wakeLock = pm.newWakeLock(PowerManager.FULL_WAKE_LOCK
+				| PowerManager.ON_AFTER_RELEASE, TAG);
+		// wakeLock without time: what happens if Service get killed by the
+		// Android system?
+		wakeLock.acquire();
+		Log.v(TAG, "Acquire wackLock");
 
 	}
 
@@ -309,14 +275,17 @@ public class TimerService extends Service {
 			timer.cancel();
 			timer = null;
 
+			// Switch off wake lock
+			if (wakeLock != null) {
+				Log.v(TAG, "Release WakeLock ...");
+				wakeLock.release();
+			}
+
 		}
 		if (tickListener != null) {
 			tickListener.onStop(leavingMs);
 		}
 		nMgr.cancel(NOTIFICATION_RUNNING);
-
-		// Switch off wake lock
-		// wakeLock.release();
 
 		stopSelf();
 

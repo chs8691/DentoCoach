@@ -3,6 +3,7 @@ package de.cs.android.putzi;
 import android.content.Context;
 import android.net.Uri;
 import android.preference.PreferenceManager;
+import android.util.Log;
 
 /**
  * Settings are stored as Preferences. There is no default value handling in
@@ -15,9 +16,11 @@ import android.preference.PreferenceManager;
 public class Settings implements SettingValues {
 
 	private final Context context;
+	private static final String TAG = "SettingValues";
 
 	public Settings(Context context) {
 		this.context = context;
+		logValues();
 	}
 
 	public long getDurationMs() {
@@ -40,4 +43,12 @@ public class Settings implements SettingValues {
 				.getDefaultSharedPreferences(context).getString(
 						Pref.KEY_PREF_SPEED, "")));
 	}
+
+	private void logValues() {
+		Log.v(TAG, "DurationMS=" + getDurationMs());
+		Log.v(TAG, "Ringtone=" + getRingtone());
+		Log.v(TAG, "Speed=" + getSpeed() + " / value=" + getSpeed().value());
+
+	}
+
 }

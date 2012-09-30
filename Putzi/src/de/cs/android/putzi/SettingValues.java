@@ -31,4 +31,5 @@ public interface SettingValues {
 	 * @return Speed
 	 */
 	public Speed getSpeed();
+
 }

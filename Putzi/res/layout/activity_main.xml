@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:layout_gravity="center"
-    android:gravity="center_horizontal"
+    android:gravity="center"
     android:layout_marginRight="2dp"
     android:layout_marginLeft="2dp"
     android:id="@+id/RootView"
@@ -88,136 +88,19 @@
 			
     <!-- Black canvan -->
     <FrameLayout
+        android:id="@+id/frame_teeth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"  
-        android:layout_marginTop="3dp">
-
+        android:layout_marginTop="3dp"
+        android:background="@drawable/teeth">
 			<ImageView   
+			        android:id="@+id/image_brush"
 			        android:scaleType="centerInside"
-					android:src="@drawable/teeth"
 					android:layout_width="wrap_content" 
 					android:layout_height="wrap_content"
 					android:contentDescription="@string/image"
 					/>				
-	        	        
-			<ImageView android:id="@+id/brush_ulo"  
-					android:src="@drawable/brush_ulo" 
-					android:layout_width="wrap_content" 
-					android:layout_height="wrap_content"
-					android:contentDescription="@string/image"
-					/>				
-			<ImageView android:id="@+id/brush_ufo"  
-					android:src="@drawable/brush_ufo" 
-					android:layout_width="wrap_content" 
-					android:layout_height="wrap_content"
-					android:contentDescription="@string/image"
-					android:visibility="invisible"/>	
-			<ImageView android:id="@+id/brush_uro"  
-					android:src="@drawable/brush_uro" 
-					android:layout_width="wrap_content" 
-					android:layout_height="wrap_content"
-					android:contentDescription="@string/image"
-					android:visibility="invisible"/>	
-	
-			<ImageView android:id="@+id/brush_lro"  
-					android:src="@drawable/brush_lro" 
-					android:layout_width="wrap_content" 
-					android:layout_height="wrap_content"
-					android:contentDescription="@string/image"
-					android:visibility="invisible"/>				
-			<ImageView android:id="@+id/brush_lfo"  
-					android:src="@drawable/brush_lfo" 
-					android:layout_width="wrap_content" 
-					android:layout_height="wrap_content"
-					android:contentDescription="@string/image"
-					android:visibility="invisible"/>	
-			<ImageView android:id="@+id/brush_llo"  
-					android:src="@drawable/brush_llo" 
-					android:layout_width="wrap_content" 
-					android:layout_height="wrap_content"
-					android:contentDescription="@string/image"
-					android:visibility="invisible"/>	
-					
-							
-			<ImageView android:id="@+id/brush_lli"  
-					android:src="@drawable/brush_lli" 
-					android:layout_width="wrap_content" 
-					android:layout_height="wrap_content"
-					android:contentDescription="@string/image"
-					android:visibility="invisible"/>				
-			<ImageView android:id="@+id/brush_lfi"  
-					android:src="@drawable/brush_lfi" 
-					android:layout_width="wrap_content" 
-					android:layout_height="wrap_content"
-					android:contentDescription="@string/image"
-					android:visibility="invisible"/>	
-			<ImageView android:id="@+id/brush_lri"  
-					android:src="@drawable/brush_lri" 
-					android:layout_width="wrap_content" 
-					android:layout_height="wrap_content"
-					android:contentDescription="@string/image"
-					android:visibility="invisible"/>	
-				
-				
-			<ImageView android:id="@+id/brush_uri"  
-					android:src="@drawable/brush_uri" 
-					android:layout_width="wrap_content" 
-					android:layout_height="wrap_content"
-					android:contentDescription="@string/image"
-					android:visibility="invisible"/>				
-			<ImageView android:id="@+id/brush_ufi"  
-					android:src="@drawable/brush_ufi" 
-					android:layout_width="wrap_content" 
-					android:layout_height="wrap_content"
-					android:contentDescription="@string/image"
-					android:visibility="invisible"/>	
-			<ImageView android:id="@+id/brush_uli"  
-					android:src="@drawable/brush_uli" 
-					android:layout_width="wrap_content" 
-					android:layout_height="wrap_content"
-					android:contentDescription="@string/image"
-					android:visibility="invisible"/>
-					
-			<ImageView android:id="@+id/brush_ult"  
-					android:src="@drawable/brush_ult" 
-					android:layout_width="wrap_content" 
-					android:layout_height="wrap_content"
-					android:contentDescription="@string/image"
-					android:visibility="invisible"/>				
-			<ImageView android:id="@+id/brush_uft"  
-					android:src="@drawable/brush_uft" 
-					android:layout_width="wrap_content" 
-					android:layout_height="wrap_content"
-					android:contentDescription="@string/image"
-					android:visibility="invisible"/>	
-			<ImageView android:id="@+id/brush_urt"  
-					android:src="@drawable/brush_urt" 
-					android:layout_width="wrap_content" 
-					android:layout_height="wrap_content"
-					android:contentDescription="@string/image"
-					android:visibility="invisible"/>
-					
-					
-			<ImageView android:id="@+id/brush_lrt"  
-					android:src="@drawable/brush_lrt" 
-					android:layout_width="wrap_content" 
-					android:layout_height="wrap_content"
-					android:contentDescription="@string/image"
-					android:visibility="invisible"/>				
-			<ImageView android:id="@+id/brush_lft"  
-					android:src="@drawable/brush_lft" 
-					android:layout_width="wrap_content" 
-					android:layout_height="wrap_content"
-					android:contentDescription="@string/image"
-					android:visibility="invisible"/>	
-			<ImageView android:id="@+id/brush_llt"  
-					android:src="@drawable/brush_llt" 
-					android:layout_width="wrap_content" 
-					android:layout_height="wrap_content"
-					android:contentDescription="@string/image"
-					android:visibility="invisible"/>
-					
-    </FrameLayout>
+			</FrameLayout>
     
 
 
