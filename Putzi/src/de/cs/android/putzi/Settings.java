@@ -19,32 +19,37 @@ public class Settings implements SettingValues {
 	private static final String TAG = "SettingValues";
 
 	public Settings(Context context) {
+		super();
 		this.context = context;
 		logValues();
 	}
 
-	public long getDurationMs() {
+	public final long getDurationMs() {
 		return getDurationS() * 1000;
 	}
 
-	public int getDurationS() {
+	public final int getDurationS() {
 		return Integer.valueOf(PreferenceManager.getDefaultSharedPreferences(
 				context).getString(Pref.KEY_PREF_DURATION, ""));
 	}
 
-	public Uri getRingtone() {
+	public final Uri getRingtone() {
 		return Uri.parse(PreferenceManager.getDefaultSharedPreferences(context)
 				.getString(Pref.KEY_PREF_RINGTONE, ""));
 	}
 
-	public Speed getSpeed() {
+	public final Speed getSpeed() {
 
 		return Speed.create(Integer.valueOf(PreferenceManager
 				.getDefaultSharedPreferences(context).getString(
 						Pref.KEY_PREF_SPEED, "")));
 	}
 
-	private void logValues() {
+	public int getStepDurationMs() {
+		return getSpeed().value() * 1000;
+	}
+
+	private final void logValues() {
 		Log.v(TAG, "DurationMS=" + getDurationMs());
 		Log.v(TAG, "Ringtone=" + getRingtone());
 		Log.v(TAG, "Speed=" + getSpeed() + " / value=" + getSpeed().value());

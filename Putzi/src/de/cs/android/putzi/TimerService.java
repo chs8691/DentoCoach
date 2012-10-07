@@ -14,6 +14,14 @@ import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
 import android.util.Log;
 
+//**************** TASKLIST ****************************
+//TODO Notification color on all API-Levels (for WVA800)
+//  7 ok
+//  8 ok
+// 10
+// 15 ok
+// 16 ok
+
 public class TimerService extends Service {
 	/**
 	 * Class for clients to access. Because we know this service always runs in
@@ -40,6 +48,13 @@ public class TimerService extends Service {
 		 * Called when timer is started
 		 */
 		void onStart(long leavingMs);
+
+		/**
+		 * Called with every new brush position (step)
+		 * 
+		 * @param int actual step number. Will be increased with every call
+		 */
+		void onStepChange(int stepNr);
 
 		/**
 		 * Called before timer will be stopped
@@ -73,9 +88,18 @@ public class TimerService extends Service {
 	private final IBinder binder = new LocalBinder();
 
 	/**
-	 * Leaving time of the timer in ms
+	 * Total duration in MS
 	 */
-	private long leavingMs;
+	private long durationMs;
+	/**
+	 * Actual leaving time of the timer in ms
+	 */
+	private long actLeavingMs;
+
+	/**
+	 * Time in MS o the next step
+	 */
+	private long nextStepMs;
 
 	private Uri soundUri = null;
 
@@ -86,10 +110,21 @@ public class TimerService extends Service {
 
 	private static final long INTERVALL_MS = 10;
 
+	private int stepDurationMs;
+
 	// private WakeLock wakeLock;
 
+	/**
+	 * Calculates actual step number
+	 * 
+	 * @return stepNr int
+	 */
+	public int getActStepNr() {
+		return (int) ((durationMs - actLeavingMs) / stepDurationMs);
+	}
+
 	public long getLeavingMs() {
-		return leavingMs;
+		return actLeavingMs;
 	}
 
 	public boolean isRunning() {
@@ -129,8 +164,35 @@ public class TimerService extends Service {
 		return START_NOT_STICKY;
 	}
 
-	public void setLeavingMs(long leavingMs) {
-		this.leavingMs = leavingMs;
+	/**
+	 * Resets the timer to particular time point, e.g. to restart a stopped
+	 * timer. Animation value will be determined.
+	 */
+	public void rebuildPreviousState(long leavingMs) {
+		actLeavingMs = leavingMs;
+	}
+
+	/**
+	 * Resets the timer to initial state, e.g. after reset Button pressed. All
+	 * values will set to initial
+	 */
+	public void resetTimer() {
+		actLeavingMs = durationMs;
+	}
+
+	/**
+	 * Initializes the timer with the default setting
+	 * 
+	 * @param durationMs
+	 *            long with time until finish
+	 * @param stepDurationMs
+	 *            int for how long one brushing step goes
+	 * @param parts
+	 *            constant int for how many parts are in one round
+	 */
+	public void setDefaultSettings(long durationMs, int stepDurationMs) {
+		this.durationMs = durationMs;
+		this.stepDurationMs = stepDurationMs;
 	}
 
 	public void setSound(Uri soundUri) {
@@ -145,9 +207,6 @@ public class TimerService extends Service {
 	 * Show a notification while this service is running.
 	 */
 	private void showNotificationFinished() {
-		// In this sample, we'll use the same text for the ticker and the
-		// expanded notification
-		CharSequence text = getText(R.string.notificationFinished);
 
 		// Set the icon, scrolling text and time stamp
 		Notification notification = new Notification(
@@ -185,9 +244,6 @@ public class TimerService extends Service {
 	 * Show a notification while this service is running.
 	 */
 	private void showNotificationRunning() {
-		// In this sample, we'll use the same text for the ticker and the
-		// expanded notification
-		CharSequence text = getText(R.string.notificationStarted);
 
 		// Set the icon, scrolling text and time stamp
 		Notification notification = new Notification(R.drawable.notification,
@@ -216,14 +272,15 @@ public class TimerService extends Service {
 	}
 
 	public void start() {
-		Log.v(TAG, "start() with leavingMs=" + leavingMs);
-		nextMs = leavingMs;
+		Log.v(TAG, "start() with leavingMs=" + actLeavingMs);
+		nextMs = actLeavingMs;
+		nextStepMs = actLeavingMs;
 
 		// Remove previous notifications if exists
 		nMgr.cancel(NOTIFICATION_FINISHED);
 		nMgr.cancel(NOTIFICATION_RUNNING);
 
-		timer = new CountDownTimer(leavingMs, INTERVALL_MS) {
+		timer = new CountDownTimer(actLeavingMs, INTERVALL_MS) {
 
 			/**
 			 * End of timer: Stop service
@@ -231,21 +288,28 @@ public class TimerService extends Service {
 			@Override
 			public void onFinish() {
 				Log.v(TAG, "onFinish()");
-				leavingMs = nextMs = 0;
+				actLeavingMs = nextMs = 0;
 				showNotificationFinished();
 				stop();
 			}
 
 			@Override
 			public void onTick(long pLeavingMs) {
-				leavingMs = pLeavingMs;
-				if (leavingMs <= nextMs) {
-					Log.v(TAG, "Timer.onTick() with leavingMs=" + leavingMs);
+				actLeavingMs = pLeavingMs;
+				if (actLeavingMs <= nextMs) {
+					Log.v(TAG, "Timer.onTick() with leavingMs=" + actLeavingMs);
 					if (tickListener != null) {
-						tickListener.onTick(leavingMs);
+						tickListener.onTick(actLeavingMs);
 					}
-					// refreshView(millisUntilFinished);
 					nextMs -= 1000;
+				}
+				if (actLeavingMs <= nextStepMs) {
+					Log.v(TAG, "Timer.onTick() reached next step");
+					if (tickListener != null) {
+						// Starts with step number 0, increase AFTER calling
+						tickListener.onStepChange(getActStepNr());
+					}
+					nextStepMs -= stepDurationMs;
 				}
 
 			}
@@ -254,7 +318,7 @@ public class TimerService extends Service {
 
 		timer.start();
 
-		tickListener.onStart(leavingMs);
+		tickListener.onStart(actLeavingMs);
 		showNotificationRunning();
 
 		// Switch on wake lock
@@ -283,7 +347,7 @@ public class TimerService extends Service {
 
 		}
 		if (tickListener != null) {
-			tickListener.onStop(leavingMs);
+			tickListener.onStop(actLeavingMs);
 		}
 		nMgr.cancel(NOTIFICATION_RUNNING);
 

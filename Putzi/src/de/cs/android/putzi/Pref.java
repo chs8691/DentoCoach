@@ -22,8 +22,8 @@ public class Pref extends PreferenceActivity implements
 	public static final String KEY_PREF_RINGTONE = "pref_ringtone";
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+	protected void onCreate(final Bundle savedState) {
+		super.onCreate(savedState);
 
 		// Initialize first calling: Set default values
 		PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
@@ -47,25 +47,26 @@ public class Pref extends PreferenceActivity implements
 	/**
 	 * implements method from OnSharedPreferenceChangeListener
 	 */
-	public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+	public void onSharedPreferenceChanged(final SharedPreferences prefs,
+			final String key) {
 
 		// concatenate summaries
 		if (key.equals(KEY_PREF_DURATION)) {
-			Preference durationPref = findPreference(key);
+			final Preference durationPref = findPreference(key);
 			durationPref.setSummary(getText(R.string.pref_duration_summary)
 					+ " " + prefs.getString(key, ""));
 		}
 		if (key.equals(KEY_PREF_SPEED)) {
-			Map<String, String> map = toMap(
-					getResources().getStringArray(R.array.pref_speed_values),
-					getResources().getStringArray(R.array.pref_speed_entries));
-			Preference speedPref = findPreference(key);
+			final Map<String, String> map = toMap(getResources()
+					.getStringArray(R.array.pref_speed_values), getResources()
+					.getStringArray(R.array.pref_speed_entries));
+			final Preference speedPref = findPreference(key);
 			speedPref.setSummary(getText(R.string.pref_speed_summary) + " "
 					+ map.get(prefs.getString(key, "-")));
 
 		}
 		if (key.equals(KEY_PREF_RINGTONE)) {
-			Preference ringtonePref = findPreference(key);
+			final Preference ringtonePref = findPreference(key);
 			String ringtoneName = null;
 			try {
 				ringtoneName = RingtoneManager.getRingtone(this,
@@ -86,8 +87,8 @@ public class Pref extends PreferenceActivity implements
 	 * @param values
 	 * @return map
 	 */
-	private Map<String, String> toMap(String[] keys, String[] values) {
-		Map<String, String> map = new HashMap<String, String>();
+	private Map<String, String> toMap(final String[] keys, final String[] values) {
+		final Map<String, String> map = new HashMap<String, String>();
 		for (int i = 0; i < keys.length; i++) {
 			map.put(keys[i], values[i]);
 		}

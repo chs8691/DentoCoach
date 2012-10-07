@@ -9,27 +9,29 @@ public interface SettingValues {
 	 * 
 	 * @return long with duration in ms
 	 */
-	public long getDurationMs();
+	long getDurationMs();
 
 	/**
 	 * How long to brush
 	 * 
 	 * @return int with duration in seconds
 	 */
-	public int getDurationS();
+	int getDurationS();
 
 	/**
 	 * Ringtone to be played at end of brushing
 	 * 
 	 * @return Uri to ringtone or null if silent configured
 	 */
-	public Uri getRingtone();
+	Uri getRingtone();
 
 	/**
 	 * Brush speed
 	 * 
 	 * @return Speed
 	 */
-	public Speed getSpeed();
+	Speed getSpeed();
+
+	int getStepDurationMs();
 
 }
