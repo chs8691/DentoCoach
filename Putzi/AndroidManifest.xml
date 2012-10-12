@@ -1,12 +1,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="de.cs.android.putzi"
-    android:versionCode="2"
-    android:versionName="1.0.1" >
+    android:versionCode="3"
+    android:versionName="1.0.2" >
 
     <uses-sdk
         android:minSdkVersion="7"
         android:targetSdkVersion="16" />
-
+    <supports-screens 
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:xlargeScreens="true"
+        android:resizeable="true"
+        android:anyDensity="true"	/>
+    
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <application
         android:icon="@drawable/ic_launcher"

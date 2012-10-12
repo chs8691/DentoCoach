@@ -15,7 +15,7 @@
 	<!-- About dialog -->
 	<string name="about_title">About Putzi</string>
 	<string name="about_text1">Have a suggestion to improve the app or found an error? Please contact</string>
-	<string name="about_text2">earl.greys.hand@gmail.com</string>
+	<string name="about_text2">earl.grey.its.hand@gmail.com</string>
 	<string name="about_text3">Thank you!</string>
 	<string name="about_close_button">Close</string>
 		
