@@ -1,0 +1,538 @@
+[
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-ldpi_brush_uro.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-ldpi/brush_uro.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/layout_notification_template_custom_big.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/layout/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/layout_notification_template_big_media_narrow_custom.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/27df1f4f4d89b5d3f90bafe68e1a11d9/support-media-compat-28.0.0/res/layout/notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/layout_notification_template_part_chronometer.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-ldpi_brush_llo.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-ldpi/brush_llo.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable_notification_icon_background.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi_brush_urt.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-xhdpi/brush_urt.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi-v11_notification.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-hdpi-v11/notification.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi_brush_lro.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-mdpi/brush_lro.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi-v11_notification_finished.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-xhdpi-v11/notification_finished.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/drawable-mdpi-v4/notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/layout_notification_action_tombstone.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/layout/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi-v11_notification_finished.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-mdpi-v11/notification_finished.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi_brush_llt.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-xhdpi/brush_llt.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi_brush_lft.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-mdpi/brush_lft.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/layout_notification_template_big_media_custom.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/27df1f4f4d89b5d3f90bafe68e1a11d9/support-media-compat-28.0.0/res/layout/notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable_notification_bg_low.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-ldpi_brush_lri.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-ldpi/brush_lri.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_launcher.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/layout_notification_template_part_time.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi_brush_urt.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-mdpi/brush_urt.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/layout_notification_template_lines_media.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/27df1f4f4d89b5d3f90bafe68e1a11d9/support-media-compat-28.0.0/res/layout/notification_template_lines_media.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-ldpi_brush_uri.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-ldpi/brush_uri.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-ldpi_brush_ulo.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-ldpi/brush_ulo.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/layout-v21_notification_template_custom_big.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi_teeth.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-mdpi/teeth.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/xml_preferences.xml.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/xml/preferences.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-ldpi_brush_lfo.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-ldpi/brush_lfo.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-ldpi_teeth.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-ldpi/teeth.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi_brush_llt.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-mdpi/brush_llt.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi_brush_lrt.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-hdpi/brush_lrt.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-ldpi_brush_lli.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-ldpi/brush_lli.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi_brush_ult.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-xhdpi/brush_ult.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi_brush_lft.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-xhdpi/brush_lft.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-ldpi_brush_lft.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-ldpi/brush_lft.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/drawable-mdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/drawable-hdpi-v4/notification_bg_normal.9.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/drawable-xhdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi_brush_ufo.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-mdpi/brush_ufo.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/drawable-hdpi-v4/notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi_brush_lro.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-xhdpi/brush_lro.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable_notification_bg.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi_brush_ulo.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-mdpi/brush_ulo.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi_teeth.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-hdpi/teeth.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi_brush_uli.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-hdpi/brush_uli.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/drawable-xhdpi-v4/notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi-v11_notification_finished.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-hdpi-v11/notification_finished.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-ldpi_brush_urt.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-ldpi/brush_urt.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi_brush_uro.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-xhdpi/brush_uro.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-ldpi_brush_uft.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-ldpi/brush_uft.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi_brush_lli.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-mdpi/brush_lli.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_launcher.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-ldpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-ldpi_brush_lfi.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-ldpi/brush_lfi.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-v21_notification_action_background.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-ldpi-v11_notification_finished.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-ldpi-v11/notification_finished.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi_brush_llt.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-hdpi/brush_llt.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-ldpi_brush_ufo.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-ldpi/brush_ufo.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi_brush_llo.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-mdpi/brush_llo.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/drawable-hdpi-v4/notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/layout-large_activity_main.xml.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/layout-large/activity_main.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi_brush_lro.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-hdpi/brush_lro.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi_brush_lrt.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-xhdpi/brush_lrt.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_launcher.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi_brush_uft.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-mdpi/brush_uft.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-ldpi_brush_ufi.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-ldpi/brush_ufi.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/layout_notification_action.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/layout/notification_action.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi_brush_ult.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-hdpi/brush_ult.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi_brush_lfo.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-xhdpi/brush_lfo.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi_brush_uri.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-xhdpi/brush_uri.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/layout-v21_notification_action.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi_brush_ulo.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-hdpi/brush_ulo.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi_brush_uro.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-hdpi/brush_uro.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/layout_notification_media_action.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/27df1f4f4d89b5d3f90bafe68e1a11d9/support-media-compat-28.0.0/res/layout/notification_media_action.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/layout-v21_notification_template_icon_group.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/layout_notification_template_icon_group.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/layout/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/layout_notification_media_cancel_action.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/27df1f4f4d89b5d3f90bafe68e1a11d9/support-media-compat-28.0.0/res/layout/notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi_brush_ufo.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-xhdpi/brush_ufo.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi_brush_llo.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-hdpi/brush_llo.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi_brush_uli.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-xhdpi/brush_uli.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/layout-v16_notification_template_custom_big.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/layout-v16/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi_brush_lri.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-xhdpi/brush_lri.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi_brush_ufo.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-hdpi/brush_ufo.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi_brush_lri.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-hdpi/brush_lri.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi_brush_ufi.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-mdpi/brush_ufi.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/menu_activity_main.xml.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/menu/activity_main.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/layout-v21_notification_action_tombstone.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-ldpi-v11_notification.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-ldpi-v11/notification.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi_brush_lfi.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-xhdpi/brush_lfi.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-ldpi_brush_lrt.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-ldpi/brush_lrt.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/layout_notification_template_big_media_narrow.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/27df1f4f4d89b5d3f90bafe68e1a11d9/support-media-compat-28.0.0/res/layout/notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi_brush_lli.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-hdpi/brush_lli.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi_brush_uri.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-hdpi/brush_uri.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi_brush_uli.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-mdpi/brush_uli.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi_teeth.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-xhdpi/teeth.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_launcher.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi_brush_lfi.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-mdpi/brush_lfi.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi_brush_lfo.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-hdpi/brush_lfo.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi_brush_ufi.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-xhdpi/brush_ufi.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi_brush_ufi.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-hdpi/brush_ufi.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/layout_notification_template_media.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/27df1f4f4d89b5d3f90bafe68e1a11d9/support-media-compat-28.0.0/res/layout/notification_template_media.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/drawable-hdpi-v4/notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi-v11_notification.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-mdpi-v11/notification.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-ldpi_brush_ult.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-ldpi/brush_ult.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi_brush_lrt.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-mdpi/brush_lrt.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-ldpi_brush_uli.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-ldpi/brush_uli.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi_brush_lri.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-mdpi/brush_lri.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi_brush_uri.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-mdpi/brush_uri.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/layout_notification_template_big_media.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/27df1f4f4d89b5d3f90bafe68e1a11d9/support-media-compat-28.0.0/res/layout/notification_template_big_media.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi_brush_lfo.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-mdpi/brush_lfo.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-ldpi_brush_llt.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-ldpi/brush_llt.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/layout_about.xml.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/layout/about.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi_brush_llo.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-xhdpi/brush_llo.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi_brush_uft.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-hdpi/brush_uft.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/layout-land_activity_main.xml.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/layout-land/activity_main.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/drawable-mdpi-v4/notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/drawable-mdpi-v4/notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi_brush_uft.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-xhdpi/brush_uft.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi_brush_lfi.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-hdpi/brush_lfi.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi-v11_notification.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-xhdpi-v11/notification.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/drawable-mdpi-v4/notification_bg_normal.9.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/drawable-hdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi_brush_ult.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-mdpi/brush_ult.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi_brush_ulo.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-xhdpi/brush_ulo.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi_brush_urt.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-hdpi/brush_urt.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-mdpi_brush_uro.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-mdpi/brush_uro.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/drawable-xhdpi-v4/notification_bg_normal.9.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-ldpi_brush_lro.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-ldpi/brush_lro.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/layout_notification_template_media_custom.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/27df1f4f4d89b5d3f90bafe68e1a11d9/support-media-compat-28.0.0/res/layout/notification_template_media_custom.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable_notification_tile_bg.xml.flat",
+        "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/drawable/notification_tile_bg.xml"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-xhdpi_brush_lli.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-xhdpi/brush_lli.png"
+    },
+    {
+        "merged": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/res/merged/debug/drawable-hdpi_brush_lft.png.flat",
+        "source": "/home/chris/egh/DentoCoach/Putzi1/app/src/main/res/drawable-hdpi/brush_lft.png"
+    }
+]

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_speed_entries">
+        <item>langsam</item>
+        <item>mittel</item>
+        <item>schnell</item>
+    </string-array>
+    <string-array name="pref_speed_values">
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+    </string-array>
+    <string name="about_close_button">Schließen</string>
+    <string name="about_text1">Haben Sie einen Vorschlag zur Verbeserung der Anwendung oder wurde ein Fehler gefunden? Schreiben Sie an:</string>
+    <string name="about_text2">earl-greys-hand@arcor.de</string>
+    <string name="about_text3">Vielen Dank!</string>
+    <string name="about_title">Über Putzi</string>
+    <string name="app_name">Putzi</string>
+    <string name="channel_description_finished">Beendet</string>
+    <string name="channel_description_started">Gestarted</string>
+    <string name="dummy">2:30</string>
+    <string name="image">Image</string>
+    <string name="menu_about">Über</string>
+    <string name="menu_finished">Ende-Benachrichtung</string>
+    <string name="menu_settings">Einstellungen</string>
+    <string name="menu_started">Start-Benachrichtung</string>
+    <string name="noticicationTitle" translatable="false">Putzi</string>
+    <string name="notificationFinished">Putzen beendet</string>
+    <string name="pref_Ringtone_summary">Audiosignal am Ende:</string>
+    <string name="pref_activity_title">Einstellungen</string>
+    <string name="pref_duration_summary">Putzdauer (Sekunden):</string>
+    <string name="pref_duration_title">Dauer</string>
+    <string name="pref_ringtone_title">Klingelton</string>
+    <string name="pref_speed_summary">Putzgeschwindigkeit:</string>
+    <string name="pref_speed_title">Geschwindigkeit</string>
+    <string name="resetButton">Reset</string>
+    <string name="round">0</string>
+    <string name="startButtonStart">Start</string>
+    <string name="startButtonStop">Stopp</string>
+    <string msgid="7988687684186075107" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="title_activity_main">Putzi</string>
+</resources>
