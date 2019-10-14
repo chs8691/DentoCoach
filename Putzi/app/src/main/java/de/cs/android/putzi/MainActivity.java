@@ -68,7 +68,7 @@ public class MainActivity extends FragmentActivity {
 
             long previousLeavingMs = 0;
 
-            InstanceState previousState = InstanceState.NULL;
+            InstanceState previousState;
             // Read old session status
             SharedPreferences pref = getPreferences(0);
             logSharedPreferences();
@@ -139,9 +139,8 @@ public class MainActivity extends FragmentActivity {
                     timerService.rebuildPreviousState(previousLeavingMs);
                     animationController.rebuildPreviousState(timerService
                             .getActStepNr());
-                    resetBtn.setEnabled(true);
-                    startBtn.setEnabled(!(previousLeavingMs == settings
-                            .getDurationMs()));
+                    resetBtn.setEnabled(!(previousLeavingMs == settings.getDurationMs()));
+                    startBtn.setEnabled(previousLeavingMs > 0);
                 }
                 // New Session
                 else {
@@ -386,8 +385,12 @@ public class MainActivity extends FragmentActivity {
     public boolean onPrepareOptionsMenu(final Menu menu) {
 
         if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.O) {
-            menu.getItem(R.id.menu_notification_started).setEnabled(false);
-            menu.getItem(R.id.menu_notification_finished).setEnabled(false);
+            super.onPrepareOptionsMenu(menu);
+            menu.findItem(R.id.menu_notification_started).setEnabled(false);
+            menu.findItem(R.id.menu_notification_started).setVisible(false);
+
+            menu.findItem(R.id.menu_notification_finished).setEnabled(false);
+            menu.findItem(R.id.menu_notification_finished).setVisible(false);
         }
 
 

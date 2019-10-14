@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/chris/egh/DentoCoach/Putzi1/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fi/values-fi.xml",
+            "outputFile": "/home/chris/egh/DentoCoach/Putzi/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fi/values-fi.xml",
             "map": [
                 {
                     "source": "/home/chris/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/values-fi/values-fi.xml",

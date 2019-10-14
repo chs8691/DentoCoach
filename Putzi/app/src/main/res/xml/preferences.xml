@@ -18,7 +18,7 @@
         android:title="@string/pref_ringtone_title"
         android:ringtoneType="all"
         android:showSilent="true"
-        android:defaultValue=""
+        android:defaultValue="@string/ringtoneDefaultValue"
        />
         
     

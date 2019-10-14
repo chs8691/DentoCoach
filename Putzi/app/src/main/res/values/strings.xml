@@ -5,6 +5,7 @@
     <string name="resetButton">Reset</string>
     <string name="round">0</string>
     <string name="dummy">2:30</string>
+    <string name="ringtoneDefaultValue" translatable="false"></string>
 
 
     <!-- Main -->
@@ -15,7 +16,7 @@
 	<!-- About dialog -->
 	<string name="about_title">About Putzi</string>
 	<string name="about_text1">Have a suggestion to improve the app or found an error? Please contact</string>
-	<string name="about_text2">earl.grey.its.hand@gmail.com</string>
+	<string name="about_text2" translatable="false">earl.grey.its.hand@gmail.com</string>
 	<string name="about_text3">Thank you!</string>
 	<string name="about_close_button">Close</string>
 		

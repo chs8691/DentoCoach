@@ -18,7 +18,7 @@ public class Settings implements SettingValues {
 	private final Context context;
 	private static final String TAG = "SettingValues";
 
-	public Settings(Context context) {
+	Settings(Context context) {
 		super();
 		this.context = context;
 		logValues();

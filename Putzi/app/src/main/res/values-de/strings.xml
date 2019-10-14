@@ -15,7 +15,6 @@
 	<!-- About dialog -->
 	<string name="about_title">Über Putzi</string>
 	<string name="about_text1">Haben Sie einen Vorschlag zur Verbeserung der Anwendung oder wurde ein Fehler gefunden? Schreiben Sie an:</string>
-	<string name="about_text2">earl-greys-hand@arcor.de</string>
 	<string name="about_text3">Vielen Dank!</string>
 	<string name="about_close_button">Schließen</string>
 		

@@ -1,0 +1,4 @@
+#Mon Oct 14 22:07:17 CEST 2019
+base.0=/home/chris/egh/DentoCoach/Putzi/app/build/intermediates/dex/release/mergeDexRelease/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

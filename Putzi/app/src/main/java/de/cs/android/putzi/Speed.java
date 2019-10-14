@@ -35,7 +35,7 @@ public enum Speed {
 
 	private final int value;
 
-	private Speed(int value) {
+	Speed(int value) {
 		this.value = value;
 	}
 
